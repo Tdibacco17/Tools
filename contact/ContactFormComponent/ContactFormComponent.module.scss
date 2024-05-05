@@ -1,0 +1,181 @@
+.container-section-contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: -7rem;
+    font-family: var(--font-primary), var(--fallback-font);
+
+    &.container-contactPage {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        margin-top: revert;
+        min-width: 40vw;
+        max-width: 40vw;
+        align-items: flex-start;
+
+        @media (max-width:992px) {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .form {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 2rem 4rem;
+        background: #424242;
+        border-radius: var(--border-radius);
+        width: calc(100% - 15rem);
+        max-width: 81.25rem;
+
+        @media (max-width:768px) {
+            opacity: 1;
+            padding: 3rem 2rem;
+        }
+
+        @media (max-width:650px) {
+            padding: 1.5rem .75rem;
+            min-width: 95%;
+            max-width: 95%;
+        }
+
+        &.form-contactPage {
+            width: 100%;
+            opacity: 0;
+            padding: 2rem;
+
+            @media (max-width:650px) {
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            @media (max-width:768px) {
+                padding: 1.5rem .75rem;
+                opacity: 1;
+            }
+
+            &.active {
+                opacity: 1;
+                transition: max-height 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            }
+        }
+
+        &-title {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 1rem;
+            max-width: 30vw;
+            color: white;
+            text-align: left;
+            font-weight: var(--font-bold);
+            font-size: 1.25rem;
+            background-color: rgba(127, 0, 39, 0.3);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+
+            @media (min-width:1600px) {
+                max-width: 29rem;
+            }
+
+            @media (max-width:1150px) {
+                min-width: 13rem;
+            }
+
+            @media (max-width:992px) {
+                font-size: var(--font-xsmall);
+            }
+
+            @media (max-width:768px) {
+                width: 100%;
+                min-width: revert;
+                max-width: revert;
+            }
+
+            .text {
+                padding-bottom: 0.25rem;
+            }
+
+            &.hidden-isContactPage {
+                display: none;
+
+                @media (max-width:768px) {
+                    display: flex;
+                    margin-bottom: 3rem;
+                    min-width: revert;
+                    width: 100%;
+                    max-width: revert;
+                }
+            }
+        }
+
+        .container-information {
+            padding-top: 3rem;
+            padding-bottom: 1.5rem;
+            min-width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+
+            &.container-information-contactPage {
+                flex-direction: column;
+                padding-top: revert;
+            }
+
+            @media (max-width:768px) {
+                flex-direction: column;
+            }
+        }
+
+        .container-form-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: .5rem;
+
+            .form-button {
+                border: none;
+                border-radius: var(--border-radius);
+                background-color: #7F0027;
+                padding: 1rem 2rem;
+                cursor: pointer;
+                font-family: var(--font-roboto);
+                font-size: var(--font-xsmall);
+                font-weight: var(--font-bold);
+                transition: background 0.3s ease-in-out;
+                color: white;
+
+                &:hover {
+                    background-color: #E40046;
+                    // color: var(--tertiary-color);
+                }
+
+                &.btn-contactPage {
+                    width: 100%;
+                }
+
+                &.disabled {
+                    opacity: 0.5;
+                    background-color: var(--placeholder-color);
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background-color: var(--placeholder-color);
+                        // color: var(--tertiary-color);
+                    }
+                }
+            }
+        }
+    }
+}
